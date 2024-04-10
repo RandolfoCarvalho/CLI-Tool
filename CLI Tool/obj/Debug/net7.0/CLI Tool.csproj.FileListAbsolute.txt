@@ -13,3 +13,19 @@ C:\temp\projetos\CLI Tool\CLI Tool\obj\Debug\net7.0\refint\CLI Tool.dll
 C:\temp\projetos\CLI Tool\CLI Tool\obj\Debug\net7.0\CLI Tool.pdb
 C:\temp\projetos\CLI Tool\CLI Tool\obj\Debug\net7.0\CLI Tool.genruntimeconfig.cache
 C:\temp\projetos\CLI Tool\CLI Tool\obj\Debug\net7.0\ref\CLI Tool.dll
+D:\temp\CLI-Tool\CLI Tool\bin\Debug\net7.0\CLI Tool.exe
+D:\temp\CLI-Tool\CLI Tool\bin\Debug\net7.0\CLI Tool.deps.json
+D:\temp\CLI-Tool\CLI Tool\bin\Debug\net7.0\CLI Tool.runtimeconfig.json
+D:\temp\CLI-Tool\CLI Tool\bin\Debug\net7.0\CLI Tool.dll
+D:\temp\CLI-Tool\CLI Tool\bin\Debug\net7.0\CLI Tool.pdb
+D:\temp\CLI-Tool\CLI Tool\obj\Debug\net7.0\CLI Tool.GeneratedMSBuildEditorConfig.editorconfig
+D:\temp\CLI-Tool\CLI Tool\obj\Debug\net7.0\CLI Tool.AssemblyInfoInputs.cache
+D:\temp\CLI-Tool\CLI Tool\obj\Debug\net7.0\CLI Tool.AssemblyInfo.cs
+D:\temp\CLI-Tool\CLI Tool\obj\Debug\net7.0\CLI Tool.csproj.CoreCompileInputs.cache
+D:\temp\CLI-Tool\CLI Tool\obj\Debug\net7.0\CLI Tool.sourcelink.json
+D:\temp\CLI-Tool\CLI Tool\obj\Debug\net7.0\CLI Tool.dll
+D:\temp\CLI-Tool\CLI Tool\obj\Debug\net7.0\refint\CLI Tool.dll
+D:\temp\CLI-Tool\CLI Tool\obj\Debug\net7.0\CLI Tool.pdb
+D:\temp\CLI-Tool\CLI Tool\obj\Debug\net7.0\CLI Tool.genruntimeconfig.cache
+D:\temp\CLI-Tool\CLI Tool\obj\Debug\net7.0\ref\CLI Tool.dll
+D:\temp\CLI-Tool\CLI Tool\obj\Debug\net7.0\CLI Tool.csproj.AssemblyReference.cache

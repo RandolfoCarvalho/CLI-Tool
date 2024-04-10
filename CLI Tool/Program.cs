@@ -1,9 +1,13 @@
-﻿namespace CLI_Tool
+﻿using System.IO;
+
+namespace CLI_Tool
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            string filePath = @"C:\Users\Luztek - Ezequiel\Desktop\teste.txt";
+
             Console.WriteLine("Bem-vindo à minha CLI!");
             Console.WriteLine("Digite 'help' para ver os comandos disponíveis.");
 
@@ -28,6 +32,21 @@
                     else
                     {
                         Console.WriteLine("Uso: say [mensagem]");
+                    }
+                }
+                else if (entrada.ToLower() == "create")
+                {
+                    try
+                    {
+                        Console.WriteLine("Escreva a mensagem que deseja dentro do arquivo: ");
+                        string mensagem = Console.ReadLine();
+                        File.WriteAllText(filePath, mensagem);
+
+                        Console.WriteLine("Mensagem fornecida: " + mensagem);
+
+                    } catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
                     }
                 }
             }

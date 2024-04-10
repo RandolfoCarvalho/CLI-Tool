@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\temp\\projetos\\CLI Tool\\CLI Tool\\CLI Tool.csproj": {}
+    "D:\\temp\\CLI-Tool\\CLI Tool\\CLI Tool.csproj": {}
   },
   "projects": {
-    "C:\\temp\\projetos\\CLI Tool\\CLI Tool\\CLI Tool.csproj": {
+    "D:\\temp\\CLI-Tool\\CLI Tool\\CLI Tool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\projetos\\CLI Tool\\CLI Tool\\CLI Tool.csproj",
+        "projectUniqueName": "D:\\temp\\CLI-Tool\\CLI Tool\\CLI Tool.csproj",
         "projectName": "CLI Tool",
-        "projectPath": "C:\\temp\\projetos\\CLI Tool\\CLI Tool\\CLI Tool.csproj",
-        "packagesPath": "C:\\Users\\rando\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\projetos\\CLI Tool\\CLI Tool\\obj\\",
+        "projectPath": "D:\\temp\\CLI-Tool\\CLI Tool\\CLI Tool.csproj",
+        "packagesPath": "C:\\Users\\Luztek - Ezequiel\\.nuget\\packages\\",
+        "outputPath": "D:\\temp\\CLI-Tool\\CLI Tool\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\rando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Luztek - Ezequiel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.2.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -53,12 +56,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.18, 7.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }
