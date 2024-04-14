@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using Cocona;
+using System.IO;
 
 namespace CLI_Tool
 {
@@ -6,6 +7,16 @@ namespace CLI_Tool
     {
         static void Main(string[] args)
         {
+
+            
+            CoconaApp.Run((string name) =>
+            {
+                Console.WriteLine($"Hello {name}");
+            });
+            
+            
+
+
             string filePath = @"C:\Users\Luztek - Ezequiel\Desktop\teste.txt";
 
             Console.WriteLine("Bem-vindo à minha CLI!");
