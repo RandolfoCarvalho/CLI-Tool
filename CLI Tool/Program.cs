@@ -1,23 +1,28 @@
 ﻿using Cocona;
 using System.IO;
+using System.Reflection;
 
 namespace CLI_Tool
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
 
-            
-            CoconaApp.Run((string name) =>
-            {
-                Console.WriteLine($"Hello {name}");
+            var app = CoconaApp.Create();
+            app.AddCommand("teste", () => { Console.WriteLine("Teste");  });
+
+
+            app.AddCommand("help", () => {
+                Console.WriteLine("Retorna esta mensagem");
             });
-            
-            
+            Console.WriteLine("Nome do programa: " + GetProgramName());
+
+            app.Run();
+            Console.ReadLine();
 
 
-            string filePath = @"C:\Users\Luztek - Ezequiel\Desktop\teste.txt";
+            /* string filePath = @"C:\Users\Luztek - Ezequiel\Desktop\teste.txt";
 
             Console.WriteLine("Bem-vindo à minha CLI!");
             Console.WriteLine("Digite 'help' para ver os comandos disponíveis.");
@@ -61,6 +66,11 @@ namespace CLI_Tool
                     }
                 }
             }
+            */
+        }
+        static string GetProgramName()
+        {
+            return Assembly.GetEntryAssembly().GetName().Name;
         }
     }
 }
