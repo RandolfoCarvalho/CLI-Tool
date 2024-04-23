@@ -9,10 +9,10 @@ namespace CLI_Tool
         static void Main(string[] args)
         {
 
-            var app = CoconaApp.Create();
-            app.AddCommand("teste", () => { Console.WriteLine("Teste");  });
-
-
+            var builder = CoconaApp.CreateBuilder();
+            var app = builder.Build();
+            //para usar dotnet run teste --text <text>
+            app.AddCommand("teste", (string text) => { TextRecord(text);  });
             app.AddCommand("help", () => {
                 Console.WriteLine("Retorna esta mensagem");
             });
@@ -71,6 +71,23 @@ namespace CLI_Tool
         static string GetProgramName()
         {
             return Assembly.GetEntryAssembly().GetName().Name;
+        } 
+        static void TextRecord(string mensagem)
+        {
+            string filePath = @"C:\Users\rando\Desktop\gravacao.txt";
+            try
+            {
+                Console.WriteLine("Escreva a mensagem que deseja dentro do arquivo: ");
+                File.WriteAllText(filePath, mensagem);
+
+                Console.WriteLine("Mensagem fornecida: " + mensagem);
+                Console.WriteLine("Mensagem gravada com sucesso");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
