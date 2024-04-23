@@ -16,14 +16,13 @@ namespace CLI_Tool
         public static void TextRecord(string mensagem)
         {
             string[] array = mensagem.Split(' ');
-            Console.WriteLine(array[1]);
-            string filePath = @"C:\Users\Luztek - Ezequiel\Desktop\gravacao.txt";
+            string filePath = @$"C:\Users\{array[0]}\{array[1]}\gravacao.txt";
             try
             {
                 Console.WriteLine();
-                File.WriteAllText(filePath, mensagem);
+                File.WriteAllText(filePath, array[2]);
 
-                Console.WriteLine("Mensagem fornecida: " + mensagem);
+                Console.WriteLine("Mensagem fornecida: " + array[2]);
                 Console.WriteLine("Mensagem gravada com sucesso");
 
             }
