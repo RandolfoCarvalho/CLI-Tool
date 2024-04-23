@@ -15,7 +15,9 @@ namespace CLI_Tool
         }
         public static void TextRecord(string mensagem)
         {
-            string filePath = @"C:\Users\rando\Desktop\gravacao.txt";
+            string[] array = mensagem.Split(' ');
+            Console.WriteLine(array[1]);
+            string filePath = @"C:\Users\Luztek - Ezequiel\Desktop\gravacao.txt";
             try
             {
                 Console.WriteLine();

@@ -12,7 +12,8 @@ namespace CLI_Tool
             var builder = CoconaApp.CreateBuilder();
             var app = builder.Build();
             //para usar dotnet run teste --text "<text>"
-            app.AddCommand("teste", (string text) => { CommandProcessor.TextRecord(text);  });
+            //1 user | 2 local | 3 text
+            app.AddCommand("record", (string text) => { CommandProcessor.TextRecord(text);  });
             app.AddCommand("help", () => {
                 Console.WriteLine("Retorna esta mensagem");
             });
