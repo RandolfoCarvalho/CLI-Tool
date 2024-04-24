@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -13,16 +14,25 @@ namespace CLI_Tool
         {
             return Assembly.GetEntryAssembly().GetName().Name;
         }
-        public static void TextRecord(string mensagem)
+        public static void TextRecord(string txt)
         {
-            string[] array = mensagem.Split(' ');
-            string filePath = @$"C:\Users\{array[0]}\{array[1]}\gravacao.txt";
+            string[] array = txt.Split(' ');
+            List<string> mensagem = new List<string>();
+            for (int i = 3; i <  array.Length; i++)
+            {
+                mensagem.Add(array[i]);
+            }
+            string mensagemCombinada = string.Join(" ", mensagem);
+            string filePath = @$"C:\Users\{array[0]}\{array[1]}\{array[2]}.txt";
             try
             {
                 Console.WriteLine();
-                File.WriteAllText(filePath, array[2]);
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    writer.WriteLine(mensagemCombinada);
+                }
 
-                Console.WriteLine("Mensagem fornecida: " + array[2]);
+                Console.WriteLine("Mensagem fornecida: " + mensagemCombinada);
                 Console.WriteLine("Mensagem gravada com sucesso");
 
             }

@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\temp\\CLI-Tool\\CLI Tool\\CLI Tool.csproj": {}
+    "C:\\temp\\projetos\\CLI Tool\\CLI Tool\\CLI Tool.csproj": {}
   },
   "projects": {
-    "D:\\temp\\CLI-Tool\\CLI Tool\\CLI Tool.csproj": {
+    "C:\\temp\\projetos\\CLI Tool\\CLI Tool\\CLI Tool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\temp\\CLI-Tool\\CLI Tool\\CLI Tool.csproj",
+        "projectUniqueName": "C:\\temp\\projetos\\CLI Tool\\CLI Tool\\CLI Tool.csproj",
         "projectName": "CLI Tool",
-        "projectPath": "D:\\temp\\CLI-Tool\\CLI Tool\\CLI Tool.csproj",
-        "packagesPath": "C:\\Users\\Luztek - Ezequiel\\.nuget\\packages\\",
-        "outputPath": "D:\\temp\\CLI-Tool\\CLI Tool\\obj\\",
+        "projectPath": "C:\\temp\\projetos\\CLI Tool\\CLI Tool\\CLI Tool.csproj",
+        "packagesPath": "C:\\Users\\rando\\.nuget\\packages\\",
+        "outputPath": "C:\\temp\\projetos\\CLI Tool\\CLI Tool\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Luztek - Ezequiel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rando\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +37,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -83,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }
