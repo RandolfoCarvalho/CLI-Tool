@@ -18,46 +18,59 @@ namespace CLI_Tool
         public static void CD()
         {
             Console.WriteLine(@"Digite o local para entrar ou criar o diretorio: Exemplo <\temp>");
+            string path = Directory.GetCurrentDirectory();
             string target = Console.ReadLine();
             try
             {
-                string path = Directory.GetCurrentDirectory();
-                Environment.CurrentDirectory = (path + target);
-                string fullPath = Environment.CurrentDirectory;
-                if (!Directory.Exists(fullPath))
+                while (target != "exit")
                 {
-                    Directory.CreateDirectory(fullPath);
-                }
-                if (Environment.CurrentDirectory.Equals(Directory.GetCurrentDirectory()))
-                {
-                    Console.WriteLine($"Você esta no {fullPath} ");
-                    Console.WriteLine();
-                    Console.WriteLine("Agora o nome do arquivo");
-                    string arquivo = Console.ReadLine();
-                    string pathToWrite = Environment.CurrentDirectory + @$"\{arquivo}.txt";
-                    using (StreamWriter writer = new StreamWriter(pathToWrite, true))
+                    if (target == "cd ..")
                     {
-                        Console.WriteLine("Escreva uma mensagem");
-                        string mensagem = Console.ReadLine();
-                        writer.WriteLine(mensagem);
+                        Console.WriteLine($"Você esta no {path} ");
                     }
-                }
-                else
-                {
-                   
+                    else
+                    {
+                        Environment.CurrentDirectory = (path + target);
+                        string fullPath = Environment.CurrentDirectory;
+                        if (!Directory.Exists(fullPath))
+                        {
+                            Directory.CreateDirectory(fullPath);
+                        }
+                        if (Environment.CurrentDirectory.Equals(Directory.GetCurrentDirectory()))
+                        {
+                            Console.WriteLine($"Você esta no {fullPath} ");
+                            Console.WriteLine();
+                            Console.WriteLine("Agora o nome do arquivo");
+                            string arquivo = Console.ReadLine();
+                            string pathToWrite = Environment.CurrentDirectory + @$"\{arquivo}.txt";
+                            using (StreamWriter writer = new StreamWriter(pathToWrite, true))
+                            {
+                                Console.WriteLine("Escreva uma mensagem");
+                                string mensagem = Console.ReadLine();
+                                writer.WriteLine(mensagem);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Diretorio mismatch");
+                        }
+                    }
+                    Console.WriteLine(@"Digite o local para entrar ou criar o diretorio: Exemplo <\temp> or <cd ..> to go back");
+                    Console.WriteLine("To exit say <exit>");
+                    target = Console.ReadLine();
                 }
             }
             catch (Exception e)
 
             {
-                    Console.WriteLine("The process failed: {0}", e.ToString());
+                Console.WriteLine("The process failed: {0}", e.ToString());
             }
         }
         public static void TextRecord(string txt)
         {
             string[] array = txt.Split(' ');
             List<string> mensagem = new List<string>();
-            for (int i = 3; i <  array.Length; i++)
+            for (int i = 3; i < array.Length; i++)
             {
                 mensagem.Add(array[i]);
             }
