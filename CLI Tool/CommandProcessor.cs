@@ -23,20 +23,19 @@ namespace CLI_Tool
             {
                 string path = Directory.GetCurrentDirectory();
                 Environment.CurrentDirectory = (path + target);
-
-                if (!Directory.Exists(target))
+                string fullPath = Environment.CurrentDirectory;
+                if (!Directory.Exists(fullPath))
                 {
-                    Directory.CreateDirectory(target);
+                    Directory.CreateDirectory(fullPath);
                 }
                 if (Environment.CurrentDirectory.Equals(Directory.GetCurrentDirectory()))
                 {
-                    Console.WriteLine($"Você esta no {target} ");
-                    Console.WriteLine(Environment.CurrentDirectory);
+                    Console.WriteLine($"Você esta no {fullPath} ");
                     Console.WriteLine();
                     Console.WriteLine("Agora o nome do arquivo");
                     string arquivo = Console.ReadLine();
-                    Environment.CurrentDirectory = Environment.CurrentDirectory + @$"\{arquivo}.txt";
-                    using (StreamWriter writer = new StreamWriter(Environment.CurrentDirectory, true))
+                    string pathToWrite = Environment.CurrentDirectory + @$"\{arquivo}.txt";
+                    using (StreamWriter writer = new StreamWriter(pathToWrite, true))
                     {
                         Console.WriteLine("Escreva uma mensagem");
                         string mensagem = Console.ReadLine();
@@ -53,26 +52,7 @@ namespace CLI_Tool
             {
                     Console.WriteLine("The process failed: {0}", e.ToString());
             }
-            /* Process process = new Process();
-            process.StartInfo.FileName = "cmd.exe";
-            process.StartInfo.RedirectStandardInput = true;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
-            process.Start();
-
-            
-            while (true)
-            {
-
-                string comando = Console.ReadLine();
-                process.StandardInput.WriteLine($"{comando}");
-            } 
-            process.StandardInput.Flush();
-            process.StandardInput.Close();
-            process.WaitForExit();
-            */
         }
-
         public static void TextRecord(string txt)
         {
             string[] array = txt.Split(' ');
@@ -90,7 +70,6 @@ namespace CLI_Tool
                 {
                     writer.WriteLine(mensagemCombinada);
                 }
-
                 Console.WriteLine("Mensagem fornecida: " + mensagemCombinada);
                 Console.WriteLine("Mensagem gravada com sucesso");
 
