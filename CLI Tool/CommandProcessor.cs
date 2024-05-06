@@ -30,14 +30,13 @@ namespace CLI_Tool
                     }
                     else
                     {
-                        Environment.CurrentDirectory = (path + target);
-                        string fullPath = Environment.CurrentDirectory;
+                        
+                        string fullPath = path + target;
+                        Environment.CurrentDirectory = fullPath;
                         if (!Directory.Exists(fullPath))
                         {
                             Directory.CreateDirectory(fullPath);
                         }
-                        if (Environment.CurrentDirectory.Equals(Directory.GetCurrentDirectory()))
-                        {
                             Console.WriteLine($"Você esta no {fullPath} ");
                             Console.WriteLine();
                             Console.WriteLine("Agora o nome do arquivo");
@@ -49,11 +48,6 @@ namespace CLI_Tool
                                 string mensagem = Console.ReadLine();
                                 writer.WriteLine(mensagem);
                             }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Diretorio mismatch");
-                        }
                     }
                     Console.WriteLine(@"Digite o local para entrar ou criar o diretorio: Exemplo <\temp> or <cd ..> to go back");
                     Console.WriteLine("To exit say <exit>");
