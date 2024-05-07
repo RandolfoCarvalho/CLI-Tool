@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 
 namespace CLI_Tool
 {
@@ -17,7 +10,7 @@ namespace CLI_Tool
         }
         public static void CD()
         {
-            Console.WriteLine(@"Digite o local para entrar ou criar o diretorio: Exemplo <\temp>");
+            Console.WriteLine(@"Digite o local para entrar ou criar o diretorio: Exemplo <temp>");
             string path = Directory.GetCurrentDirectory();
             string target = Console.ReadLine();
             try
@@ -30,24 +23,23 @@ namespace CLI_Tool
                     }
                     else
                     {
-                        
-                        string fullPath = path + target;
-                        Environment.CurrentDirectory = fullPath;
+                        string fullPath = path + (@"\" + target);
                         if (!Directory.Exists(fullPath))
                         {
                             Directory.CreateDirectory(fullPath);
                         }
-                            Console.WriteLine($"Você esta no {fullPath} ");
-                            Console.WriteLine();
-                            Console.WriteLine("Agora o nome do arquivo");
-                            string arquivo = Console.ReadLine();
-                            string pathToWrite = Environment.CurrentDirectory + @$"\{arquivo}.txt";
-                            using (StreamWriter writer = new StreamWriter(pathToWrite, true))
-                            {
-                                Console.WriteLine("Escreva uma mensagem");
-                                string mensagem = Console.ReadLine();
-                                writer.WriteLine(mensagem);
-                            }
+                        Environment.CurrentDirectory = fullPath;
+                        Console.WriteLine($"Você esta no {fullPath} ");
+                        Console.WriteLine();
+                        Console.WriteLine("Agora o nome do arquivo");
+                        string arquivo = Console.ReadLine();
+                        string pathToWrite = Environment.CurrentDirectory + @$"\{arquivo}.txt";
+                        using (StreamWriter writer = new StreamWriter(pathToWrite, true))
+                        {
+                            Console.WriteLine("Escreva uma mensagem");
+                            string mensagem = Console.ReadLine();
+                            writer.WriteLine(mensagem);
+                        }
                     }
                     Console.WriteLine(@"Digite o local para entrar ou criar o diretorio: Exemplo <\temp> or <cd ..> to go back");
                     Console.WriteLine("To exit say <exit>");
@@ -55,7 +47,6 @@ namespace CLI_Tool
                 }
             }
             catch (Exception e)
-
             {
                 Console.WriteLine("The process failed: {0}", e.ToString());
             }
