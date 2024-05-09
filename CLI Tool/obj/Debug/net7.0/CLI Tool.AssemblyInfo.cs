@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CLI Tool")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3c10e1066a0f5e8ca30f36683f75065b352512b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a0397af6bb97e3d19dfcc7c33b7bb87a5db7b06")]
 [assembly: System.Reflection.AssemblyProductAttribute("CLI Tool")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CLI Tool")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
