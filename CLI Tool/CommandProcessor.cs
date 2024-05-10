@@ -1,4 +1,6 @@
 ﻿using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
+using CLI_Tool.classes;
 
 namespace CLI_Tool
 {
@@ -10,56 +12,9 @@ namespace CLI_Tool
         }
         public static void CD()
         {
-            Console.WriteLine(@"Digite o local para entrar ou criar o diretorio: Exemplo <temp> or <cd ..> to go back");
-            try
-            {
-                string path = Environment.CurrentDirectory;
-                string target = Console.ReadLine();
-                while (target != "exit")
-                {
-                    if (target == "cd ..")
-                    {
-                        string[] cdPath = path.Split('\\');
-                        Array.Resize(ref cdPath, cdPath.Length - 1);
-                        string newCdPath = String.Join("\\", cdPath);
-                        Environment.CurrentDirectory = newCdPath + "\\";
-                        path = Environment.CurrentDirectory;
-                        Console.WriteLine("New cd Path: " + newCdPath);
-                        Console.WriteLine("Environment: " + Environment.CurrentDirectory);
-                        Console.WriteLine("Path: " + path);
-                        Console.WriteLine($"Você esta no {Environment.CurrentDirectory}");
-                    }
-                    else
-                    {
-                        path = Environment.CurrentDirectory;
-                        string fullPath = path + (@"\" + target);
-                        if (!Directory.Exists(fullPath))
-                        {
-                            Directory.CreateDirectory(fullPath);
-                        }
-                        Environment.CurrentDirectory = fullPath;
-                        Console.WriteLine($"Você esta no {fullPath} ");
-                        Console.WriteLine();
-                        Console.WriteLine("Agora o nome do arquivo");
-                        string arquivo = Console.ReadLine();
-                        string pathToWrite = Environment.CurrentDirectory + @$"\{arquivo}.txt";
-                        using (StreamWriter writer = new StreamWriter(pathToWrite, true))
-                        {
-                            Console.WriteLine("Escreva uma mensagem");
-                            string mensagem = Console.ReadLine();
-                            writer.WriteLine(mensagem);
-                        }
-                    }
-                    Console.WriteLine(@"Digite o local para entrar ou criar o diretorio: Exemplo <\temp> or <cd ..> to go back");
-                    Console.WriteLine("To exit say <exit>");
-                    target = Console.ReadLine();
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("The process failed: {0}", e.ToString());
-            }
+            NavegacaoDePastas.cd();
         }
+
         public static void TextRecord(string txt)
         {
             string[] array = txt.Split(' ');
