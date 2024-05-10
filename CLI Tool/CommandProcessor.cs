@@ -10,19 +10,28 @@ namespace CLI_Tool
         }
         public static void CD()
         {
-            Console.WriteLine(@"Digite o local para entrar ou criar o diretorio: Exemplo <temp>");
-            string path = Directory.GetCurrentDirectory();
-            string target = Console.ReadLine();
+            Console.WriteLine(@"Digite o local para entrar ou criar o diretorio: Exemplo <temp> or <cd ..> to go back");
             try
             {
+                string path = Environment.CurrentDirectory;
+                string target = Console.ReadLine();
                 while (target != "exit")
                 {
                     if (target == "cd ..")
                     {
-                        Console.WriteLine($"Você esta no {path} ");
+                        string[] cdPath = path.Split('\\');
+                        Array.Resize(ref cdPath, cdPath.Length - 1);
+                        string newCdPath = String.Join("\\", cdPath);
+                        Environment.CurrentDirectory = newCdPath + "\\";
+                        path = Environment.CurrentDirectory;
+                        Console.WriteLine("New cd Path: " + newCdPath);
+                        Console.WriteLine("Environment: " + Environment.CurrentDirectory);
+                        Console.WriteLine("Path: " + path);
+                        Console.WriteLine($"Você esta no {Environment.CurrentDirectory}");
                     }
                     else
                     {
+                        path = Environment.CurrentDirectory;
                         string fullPath = path + (@"\" + target);
                         if (!Directory.Exists(fullPath))
                         {
