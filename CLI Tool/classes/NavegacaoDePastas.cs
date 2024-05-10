@@ -16,6 +16,7 @@ namespace CLI_Tool.classes
         {
             retrocedeDiretorio();
         }
+
         public static void criaDiretorio(string path, string target)
         {
             path = Environment.CurrentDirectory;
@@ -68,7 +69,7 @@ namespace CLI_Tool.classes
                     }
                     else if (target == "whereami")
                     {
-                        Console.WriteLine($"Você esta no {Environment.CurrentDirectory}");
+                        DestacarMensagem($"Voce esta no {Environment.CurrentDirectory}", ConsoleColor.Red);
                     }
                     else
                     {
@@ -85,6 +86,12 @@ namespace CLI_Tool.classes
             {
                 Console.WriteLine("The process failed: {0}", e.ToString());
             }
+        }
+        public static void DestacarMensagem(string mensagem, ConsoleColor cor)
+        {
+            Console.ForegroundColor = cor;
+            Console.WriteLine(mensagem);
+            Console.ResetColor();
         }
     }
 }
